@@ -112,7 +112,7 @@ Crafty.scene("main", function() {
         
         if (msg == 'carrots') {
             //$('#msgs').css('color','#aa0000');
-            $('#msgs').text('You have no carrots to eat!');
+            $('#msgs').text('¡No tienes zanahorias para comer!');
         } else if (msg == 'clear') {
             $('#msgs').text('');
             return;
@@ -180,7 +180,7 @@ Crafty.scene("main", function() {
             
             // DEBUG
             if (_Globals.conf.get('debug')) {
-                console.log('Turn passed! New limites carrots: %d, enemies: %d', 
+                console.log('¡Turno pasado! Nuevos límites de zanahorias: %d, enemigos: %d', 
                     tilemap.get('maxCarrots'),
                     maxEnemies);
             }
