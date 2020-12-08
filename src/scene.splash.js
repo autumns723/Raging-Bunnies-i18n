@@ -67,9 +67,9 @@ Crafty.scene("splash", function() {
             "width": 720,
             "height": 440,
             modal: true,
-            "title": "How to play",
+            "title": "Cómo jugar",
             buttons: {
-                "Sounds legit": function() {
+                "Suena legítimo": function() {
                     $(this).dialog("close");
                 }
             },
@@ -87,9 +87,9 @@ Crafty.scene("splash", function() {
             "width": 480,
             "height": 280,
             modal: true,
-            "title": "Credits",
+            "title": "Créditos",
             buttons: {
-                "Ok": function() {
+                "Okay": function() {
                     $(this).dialog("close");
                 }
             },
