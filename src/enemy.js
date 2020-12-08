@@ -361,7 +361,7 @@ Enemy = ActorObject.extend({
             
             // TRACE
             if (_Globals.conf.get('trace'))
-                console.log("Enemy: %d is pushed back", this[0]);
+                console.log("Enemigo: %d es rechazado", this[0]);
             
             var newX = this.x;
             var newY = this.y;
@@ -400,7 +400,7 @@ Enemy = ActorObject.extend({
         .bind("ForkBeacon", function(where) {
             // TRACE
             if (_Globals.conf.get('trace'))
-                console.log("Enemy: %d is forked", this[0]);
+                console.log("Enemigo: %d está en el tenedor", this[0]);
                 
             this.target.x = where.x;
             this.target.y = where.y;
