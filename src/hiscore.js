@@ -29,9 +29,9 @@ var Hiscore = Backbone.Model.extend({
     },
     open: function(fnCallback) {
         if (!GJAPI || !GJAPI.bActive) {
-            console.error('Gamejolt login not active!');
+            console.error('¡El inicio de sesión de Gamejolt no está activo!');
         } else {
-            console.log('Gamejolt user ' + GJAPI.sUserName);
+            console.log('Usuario de Gamejolt ' + GJAPI.sUserName);
         }
     },
     // save score for given person directly to DB
@@ -40,16 +40,16 @@ var Hiscore = Backbone.Model.extend({
             if (GJAPI.bActive) {
                 GJAPI.ScoreAdd(_Globals.conf.get('tid'), wscore, wscore + ' carrots', '', function (pResponse) {
                     if (pResponse && !!!pResponse.success) {
-                        console.error('Error writing score!', pResponse.message);
+                        console.error('¡Error al escribir la puntuación!', pResponse.message);
                         fnCallback && fnCallback(null);
                     } else {
                         fnCallback && fnCallback(true);
                     }
                 });
             } else {
-                GJAPI.ScoreAddGuest(_Globals.conf.get('tid'), wscore, wscore + ' carrots', 'Guest', '', function (pResponse) {
+                GJAPI.ScoreAddGuest(_Globals.conf.get('tid'), wscore, wscore + ' carrots', 'Invitado', '', function (pResponse) {
                     if (pResponse && !!!pResponse.success) {
-                        console.error('Error writing score!', pResponse.message);
+                        console.error('¡Error al escribir la puntuación!', pResponse.message);
                         fnCallback && fnCallback(null);
                     } else {
                         fnCallback && fnCallback(true);
@@ -66,7 +66,7 @@ var Hiscore = Backbone.Model.extend({
         if (GJAPI) {
             GJAPI.ScoreFetch(_Globals.conf.get('tid'), GJAPI.SCORE_ALL, 50, function (pResponse) {
                 if (pResponse && !!!pResponse.success) {
-                    console.error('Error fetching scores!', pResponse.message);
+                    console.error('¡Error al obtener las puntuaciones!', pResponse.message);
                     fnCallback && fnCallback(null);
                 } else {
                     for(var i = 0; i < pResponse.scores.length; i++) {
@@ -97,13 +97,13 @@ Crafty.bind("ShowSaveHiscore", function(score) {
         zIndex: 20,
         open: function() {
             if (GJAPI && GJAPI.bActive) {
-                $(this).html('Publish your score to Gamejolt?');
+                $(this).html('¿Publicar tu puntaje en Gamejolt?');
             } else {
-                $(this).html('Publish your score as \'Guest\' to Gamejolt?');
+                $(this).html('¿Publica tu puntuación como \'Invitado\' en Gamejolt?');
             }
         },
         buttons: {
-            "Yes": function() {
+            "Si": function() {
                 var hiscore = _Globals['hiscore'];
                 hiscore.save(score, function (success) {
                     if (success) {
@@ -113,7 +113,7 @@ Crafty.bind("ShowSaveHiscore", function(score) {
                         });
                     } else {
                         Crafty.trigger('ShowHiscore', {
-                            text: 'Failed saving your score! Sorry :(', refresh: true
+                            text: '¡No se pudo guardar su puntuación! Disculpa :(', refresh: true
                         });
                     }
                 });
@@ -136,18 +136,18 @@ Crafty.bind("ShowHiscore", function(params) {
         height: 520,
         modal: true,
         position: 'top',
-        "title": "Top 50 Scores",
+        "title": "50 mejores puntuaciones",
         open: function() {
             $("#dialog-score").css({'height': '520px'});
             if (!params.text) {
-                $("#dialog-score").html('<p>Please wait while loading scores ...</p>');
+                $("#dialog-score").html('<p>Espere mientras se cargan las puntuaciones...</p>');
                 var hiscore = _Globals['hiscore'];
                 var text = '<div>';
                 text += '<span class="name u">';
-                text += 'Name';
+                text += 'Nombre';
                 text += '</span>';
                 text += '<span class="score u">';
-                text += 'Carrots';
+                text += 'Zanahorias';
                 text += '</span>';
                 text += '</div>';            
                 hiscore.getAllScores(function(scores, server) {
@@ -155,7 +155,7 @@ Crafty.bind("ShowHiscore", function(params) {
                     if (!scores) {
                         text += '<div>';
                         text += '<span class="name">';
-                        text += 'Failed loading scores!';
+                        text += '¡No se pudo cargar las puntuaciónes!';
                         text += '</span>';
                         text += '<span class="score">';
                         text += '</span>';
@@ -187,11 +187,11 @@ Crafty.bind("ShowHiscore", function(params) {
             }  
         },
         buttons: {
-            "Refresh Scores": function() {
+            "Actualizar": function() {
                 $(this).dialog("close");
                 Crafty.trigger('ShowHiscore', params);
             },
-            "Let me out!": function() {
+            "¡Déjame salir!": function() {
                 if (params.refresh) {
                     Crafty.audio.stop('music');
                     Crafty.init();
