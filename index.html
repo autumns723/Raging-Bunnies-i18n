@@ -25,32 +25,28 @@
     <div id="dialog-save-score" style="display: none;"></div>
     <div id="dialog-score" style="display: none;"></div>
     <div id="dialog-howto" style="display: none;">
-    <h1>Story</h1>
+    <h1>Historia</h1>
     <p>
-    It's a lovely day at farmers field. A great time for a hungry (ninja) rabbit to sneak in and <span class="keys">pull</span> 
-    some carrots to eat. Too bad you weren't the only one with that idea. A horde of hungry opponents approaches fast! 
-    Pull as many carrots as you can in <span class="keys">3 minutes</span>. To fight your opponents, you must use ancient rabbitjutsu tactics. 
-    These are slightly unorthodox. Simply uhm ... fart to <span class="keys">push</span> your opponents away or use a 
-    <span class="keys">Carrot-on-a-Fork</span> totem decoy to deceive them. The totem is spawned on your current position.
+		Es un día bello en el campo de agricultores. Un buen momento para que un conejo (ninja) hambriento se cuele y <span class="keys">arranque</span> algunas zanahorias para comer. Lástima que no fuiste el único con esa idea. ¡Una horda de oponentes se acerca rápido! Arranca tantas zanahorias que puedas en <span class="keys">3 minutos</span>. Para pelear contra tus oponentes, debes usar tácticas antiguas del conejojutsu. Estas son un poco ortodoxas. Simplemente, pues… échate un pedo para <span class="keys">empujar</span> tus oponentes o usa un señuelo de tótem de una <span class="keys">zanahoria sobre un tenedor</span>. El tótem se genera en tu posición actual.  
     </p>
-    <h1>Goal &amp; Controls</h1>
-    <p>Collect as many carrots as possible in 3 minutes. Use the controls to move and repel opponents.</p>
+    <h1>Objetivo &amp; Controles</h1>
+    <p>Recolecta tantas zanahorias como puedas en 3 minutos. Usa los controles para moverte y repeler a los oponentes.</p>
     <ul>
-        <li><span class="keys">Arrow keys</span> - Move your ninja rabbit on the map.</li>
-        <li><span class="keys">Z (or Y)</span> - Hold down to pull a carrot from the ground. You need to be close to a carrot.</li>
-        <li><span class="keys">Q</span> - Eat <span class="keys">1 carrot</span> and fart to push opponents away from you.</li>
-        <li><span class="keys">W</span> - Eat <span class="keys">2 carrots</span> and spawn a "Carrot-on-a-Fork" totem that attracts 
-        opponents and gives you time to pull more carrots elsewhere on the map.</li>
+        <li><span class="keys">Teclas de flecha</span> - mueva su conejo ninja en el mapa.</li>
+        <li><span class="keys">Z (o Y)</span> - mantén pulsado para arrancar una zanahoria del suelo. Necesitas estar cerca de una zanahoria.</li>
+        <li><span class="keys">Q</span> - Come <span class="keys">1 zanahoria</span> y echar un pedo para empujar oponentes.</li>
+        <li><span class="keys">W</span> - Come <span class="keys">2 zanahorias</span> y genera un tótem "Zanahoria en un tenedor" que atrae a los oponentes y te da tiempo para arrancar más zanahorias en otra parte del mapa.</li>
     </ul>
     </div>
     <div id="dialog-credits" style="display: none;">
-        <p>Game design and programming - <a href="http://petarov.vexelon.net">Petar Petrov</a></p>
+        <p>Diseño y programación de juegos - <a href="http://petarov.vexelon.net">Petar Petrov</a></p>
         <br />
-        <p>Art and graphics - <a href="http://stremena.com/">Stremena Tuzsuzova</a></p>
+        <p>Arte y gráficos - <a href="http://stremena.com/">Stremena Tuzsuzova</a></p>
         <br />
-        <p>Sound and Music - <a href="https://github.com/petarov/game-off-2012#sound-and-music">See here</a></p>
+        <p>Sonido y música - <a href="https://github.com/petarov/game-off-2012#sound-and-music">ver aquí</a></p>
     </div>
-    <div id="dialog-restart" style="display: none;">Would you like to restart the game?</div>
+    <div id="dialog-restart" style="display: none;">¿Quieres reiniciar el juego?
+</div>
     
     <div id="fps" style="display: none;"></div>
 
@@ -70,15 +66,21 @@
                 <div id="toggle-music"></div>
                 <div id="toggle-sfx"></div>
             </div>
-            <div id="menu" style="display: none;">
-                <div id="menu-start" class="button" style="left: 76px">Play Game</div>
-                <div id="menu-howto" class="button" style="left: 248px">How to Play</div>
-                <div id="menu-hiscore" class="button" style="left: 438px">Hiscores</div>
-                <div id="menu-credits" class="button" style="left: 618px">Credits</div>
+			<div class="container">
+				<div id="menu" style="display: none;" class="parent">
+					<div id="menu-start" class="item">Empezar juego</div>
+					<div id="menu-howto" class="item">Cómo jugar</div>
+					<div id="menu-hiscore" class="item">Puntuaciones altas</div>
+					<div id="menu-credits" class="item">Créditos</div>
+				</div>
             </div>
-        </div>
+			<div>
+
+            </div>
+	
+		</div>
     </div>
-    <p class="safari">Music and sounds are currently not supported on Safari. :(</p>
+    <p class="safari">Actualmente, la música y los sonidos no son compatibles con Safari. :(</p>
     <div id="logo">
         <div id="version" style="display: none;"></div>
     </div>
@@ -89,6 +91,6 @@ window._Globals = {env:'dev', version:ver, scene:'splash'};
 var require = {waitSeconds:15, urlArgs:"bust="+ver};
 </script>
 <script data-main="src/bootstrap" src="lib/require.js">
-</script
+	</script>
 </body>
 </html>
