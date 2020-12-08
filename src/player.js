@@ -224,7 +224,7 @@ Player = ActorObject.extend({
                 || this.y + 32 > Crafty.viewport.height || this.y < -16) {
                     
                 if (_Globals.conf.get('trace'))
-                    console.log("Player: Hit object or wall");
+                    console.log("Jugador: Golpear objeto o pared");
                 
                 this.attr({x: oldx, y: oldy});
                 return;
